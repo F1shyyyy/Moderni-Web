@@ -14,11 +14,20 @@ header a{
     text-decoration: none;
     color: white;
 }
+#header-h1{
+    display: flex;
+    padding-left: 1rem;
+}
 h1{
     color: white;
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 1rem 1rem 1rem 1rem;
     font-size: 3rem;
 }
+#nike-svg{
+    width: 5rem;
+    filter: invert(1);
+}
+
 #header-odkazy{
     display: flex;
     align-items: center;
