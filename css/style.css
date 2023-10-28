@@ -1,6 +1,15 @@
+@font-face {
+    font-family: Nike_Bold;
+    src: url(/Font/nike-bold.ttf);
+}
+@font-face {
+    font-family: Nike;
+    src: url(/Font/nike-normal.ttf);
+}
 *{
     margin: 0;
     padding: 0;
+    font-family: Nike;
 }
 body{
     width: 100vw;
@@ -12,34 +21,65 @@ header{
 }
 header a{
     text-decoration: none;
-    color: white;
 }
 #header-h1{
     display: flex;
-    padding-left: 1rem;
 }
 h1{
     color: white;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 3rem;
     font-size: 3rem;
+    font-family: Nike_Bold;
 }
 #nike-svg{
     width: 5rem;
     filter: invert(1);
 }
-
-#header-odkazy{
+#header-menu{
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding-right: 2rem;
 }
-#header-odkazy a{
-    font-size: 1.5rem;
+#header-menu li{
+    list-style: none;
 }
-#header-odkazy-boty{
+#header-ul{
     display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    padding-right: 3rem;
+}
+.header-link{
+    font-size: 1.5rem;
+    color: white;
+}
+#sneakers-a{
+    padding: 0 1rem;
+}
+#clothing-dropdown{
+    position: relative;
+}
+#sneakers-dropdown{
+    position: relative;
+}
+.dropdown-list{
+    display: none;
+    position: absolute; 
     flex-direction: column;
-    align-items: flex-end;
-    background-color: #d6d4d4;
+    gap: 0.1rem;
+    width: 120%;
+    margin-top: 2rem;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    background-color: #FFFFFF;
+}
+.dropdown-list a{
+    color: black;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+#clothing-dropdown:hover #clothing-dropdown-list{
+    display: flex;
+}
+#sneakers-dropdown:hover #sneakers-dropdown-list{
+    display: flex;
 }
