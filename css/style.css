@@ -47,27 +47,33 @@ h1{
     align-items: center;
     gap: 3.5rem;
     padding-right: 3rem;
+    height: 100%;
 }
 .header-link{
     font-size: 1.5rem;
     color: white;
+    background: none;
+    border: 0;
+    cursor: pointer;
 }
 #sneakers-a{
     padding: 0 1rem;
 }
-#clothing-dropdown{
+#clothing-dropdown, #sneakers-dropdown{
+    height: 100%;
     position: relative;
 }
-#sneakers-dropdown{
-    position: relative;
+#clothing-button, #sneakers-button{
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 .dropdown-list{
     display: none;
     position: absolute; 
     flex-direction: column;
     gap: 0.1rem;
-    width: 120%;
-    margin-top: 2rem;
+    width: 100%;
     z-index: 1;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     background-color: #FFFFFF;
@@ -77,9 +83,47 @@ h1{
     font-size: 1.2rem;
     padding: 0.5rem;
 }
-#clothing-dropdown:hover #clothing-dropdown-list{
+#sneakers-dropdown-list{
+    width: max-content;
+}
+#clothing-button:hover + #clothing-dropdown-list, #clothing-dropdown-list:hover{
     display: flex;
 }
-#sneakers-dropdown:hover #sneakers-dropdown-list{
+#sneakers-button:hover + #sneakers-dropdown-list, #sneakers-dropdown-list:hover{
     display: flex;
+}
+.show-clothing #clothing-dropdown-list{
+    display: flex;
+}
+.show-sneakers #sneakers-dropdown-list{
+    display: flex;
+}
+@media (max-width: 700px) {
+    header{
+        flex-direction: column;
+        align-items: center;
+    }
+    #header-menu{
+        width: 100%;
+    }
+    #header-ul{
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding-right: 0;
+        gap: 0;
+    }
+    #header-ul li{
+        width: 100%;
+    }
+    #header-ul li div{
+        text-align: center;
+    }
+    .dropdown-list{
+        position: static;
+        width: 100%;
+    }
+    #sneakers-dropdown-list{
+        width: 100%;
+    }
 }

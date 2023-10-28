@@ -6,6 +6,7 @@
     <title>Nike</title>
     <link rel="icon" href="img/nike-4-logo-svg-vector.svg" id="icon">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,7 +18,9 @@
         <nav id="header-menu">
             <ul id="header-ul">
                 <li id="clothing-dropdown">
-                    <a href="" class="header-link">Clothing</a>
+                    <div id="clothing-button">
+                        <button class="header-link" id="clth-button">Clothing</button>
+                    </div>
                     <ul class="dropdown-list" id="clothing-dropdown-list">
                         <li><a href="">Jackets</a></li>
                         <li><a href="">Hoodies</a></li>
@@ -25,7 +28,9 @@
                     </ul>
                 </li>
                 <li id="sneakers-dropdown">
-                    <a href="" class="header-link" id="sneakers-a">Sneakers</a>     
+                    <div id="sneakers-button">
+                        <button class="header-link" id="snkrs-button">Sneakers</button>  
+                    </div>
                     <ul class="dropdown-list" id="sneakers-dropdown-list">
                         <li><a href="">Air Force 1</a></li>
                         <li><a href="">Jordan 1 Low</a></li>
@@ -43,4 +48,5 @@
 
     </main>
 </body>
+
 </html>
