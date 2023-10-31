@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     font-family: Nike;
+    scroll-behavior: smooth;
 }
 body{
     width: 100vw;
@@ -25,15 +26,21 @@ header a{
 #header-h1{
     display: flex;
 }
+#header-h1 a{
+    display: flex;
+    margin-left: 2rem;
+}
 h1{
     color: white;
-    padding: 1rem 1rem 1rem 3rem;
+    padding: 1rem 1rem 1rem 1rem;
     font-size: 3rem;
     font-family: Nike_Bold;
 }
 #nike-svg{
     width: 5rem;
     filter: invert(1);
+    -webkit-user-drag: none;
+    user-select: none;
 }
 #header-menu{
     display: flex;
@@ -86,17 +93,40 @@ h1{
 #sneakers-dropdown-list{
     width: max-content;
 }
-#clothing-button:hover + #clothing-dropdown-list, #clothing-dropdown-list:hover{
-    display: flex;
-}
-#sneakers-button:hover + #sneakers-dropdown-list, #sneakers-dropdown-list:hover{
-    display: flex;
-}
 .show-clothing #clothing-dropdown-list{
     display: flex;
 }
 .show-sneakers #sneakers-dropdown-list{
     display: flex;
+}
+
+@media(min-width: 701px) {
+    #clothing-button:hover + #clothing-dropdown-list,
+    #sneakers-button:hover + #sneakers-dropdown-list,
+    #clothing-dropdown-list:hover,
+    #sneakers-dropdown-list:hover{
+        display: flex;
+    }
+    #clth-button::after, #snkrs-button::after{
+        position:absolute;
+        top:75%;
+        left:0%;
+        width:0;
+        height:2px;
+        background:#FFF;
+        display:block;
+        content:'';
+        transition: 0.5s ease-in-out;
+    }
+    #clth-button:hover::after, #snkrs-button:hover::after{
+        width:100%;
+    }
+    .underline-clothing #clth-button::after{
+        width: var(--clth);
+    }
+    .underline-sneakers #snkrs-button::after{
+        width: var(--snkrs);
+    }
 }
 @media (max-width: 700px) {
     header{
@@ -118,6 +148,9 @@ h1{
     }
     #header-ul li div{
         text-align: center;
+    }
+    .header-link{
+        margin: 0.5rem 1rem;
     }
     .dropdown-list{
         position: static;
