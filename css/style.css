@@ -88,8 +88,7 @@ h1{
     padding: 0.5rem;
 }
 #sneakers-dropdown-list{
-    width: max-content;
-    right: 10%;
+    width: max-content; 
 }
 .show-clothing #clothing-dropdown-list{
     display: flex;
@@ -105,12 +104,13 @@ h1{
     background-repeat: no-repeat;
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 #main-img h2{
     color: white;
     font-size: 3rem;
-    margin: 3rem 5rem;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
 }
 #main-img a{
     text-decoration: none;
@@ -122,24 +122,123 @@ h1{
 #main-img span{
     font-size: 5rem;
     overflow-y: hidden;
-    margin: 2.5rem 5rem;
+    margin-bottom: 2.5rem;
 }
 #af1{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 2rem;
 }
 #af1 h2{
     margin: 2rem;
     padding: 1rem;
+    font-size: 2.5rem;
     text-align: center;
     width: 50%;
     border-bottom: 2px solid black;
 }
 #af1-shoes{
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 90%;
+}
+.af1-shoe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    width: 80%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: 18%;
+}
+.af1-shoe p{
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.af1-shoe img{
+    width: 100%;
+    z-index: -1;
+}
+.price{
+    font-weight: bold;
+}
+#campaigns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#campaigns h2{
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 50%;
+    border-bottom: 2px solid black;
+}
+#campaigns-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 1rem 3rem 1rem;
+    width: 90%;
+}
+.campaign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 30%;
+    border: 2px solid black;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px #523f3f;
+}
+.campaign img{
+    width: 30%;
+    border-radius: 50%;
+}
+.campaign-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+.campaign-text h3{
+    font-size: 2rem;
+    margin: 1rem;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #211f1f;
+    color: white;
+}
+footer p{
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+#footer-links{
+    display: flex;   
+    justify-content: space-evenly;
+    width: 25%;
+    margin: 1rem;
+}
+#footer-links div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#footer-links i{
+    font-size: 3rem;
+}
+#footer-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin: 0.5rem;
 }
 @media(min-width: 701px) {
     #clothing-button:hover + #clothing-dropdown-list,
@@ -162,11 +261,34 @@ h1{
     #clth-button:hover::after, #snkrs-button:hover::after{
         width:100%;
     }
+    .dropdown-list li a:hover{
+        color: #523f3f;
+    }
     .underline-clothing #clth-button::after{
-        width: var(--clth);
+        width: 100%;
     }
     .underline-sneakers #snkrs-button::after{
-        width: var(--snkrs);
+        width: 100%;
+    }
+    .af1-shoe:hover img{
+        scale: 120%;
+        transition: 0.5s ease-in-out;
+    }
+    .af1-shoe img{
+        transition: 0.5s ease-in-out;
+    }
+    .footer-social:hover i{
+        scale: 150%;
+        filter: drop-shadow(0px 0px 20px #ffffff95);
+        transition: 0.5s ease-in-out;
+    }
+    .footer-social i{
+        transition: 0.5s ease-in-out;
+    }
+}
+@media (max-width: 900px) {
+    .af1-shoe{
+        width: 30%;
     }
 }
 @media (max-width: 700px) {
@@ -193,11 +315,41 @@ h1{
     .header-link{
         margin: 0.5rem 1rem;
     }
+    #main-img{
+        background-size: cover;
+    }
+    #af1-shoes{
+        flex-direction: column;
+        align-items: center;
+    }
+    .af1-shoe{
+        width: 80%;
+        margin-bottom: 1rem;
+    }
     .dropdown-list{
         position: static;
         width: 100%;
     }
     #sneakers-dropdown-list{
         width: 100%;
+    }
+    #campaigns-wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .campaign{
+        width: 90%;
+        align-items: center;
+    }
+    .campaign-text h3{
+        text-align: center;
+    }
+    #footer-links{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    footer{
+        text-align: center;
     }
 }
