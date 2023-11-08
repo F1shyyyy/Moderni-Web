@@ -12,9 +12,3 @@ sneakersButton.addEventListener("click", function(){
     sneakersDiv.classList.toggle("show-sneakers");
     sneakersDiv.classList.toggle("underline-sneakers");
 })
-
-function changeJordan(shoe) {
-    for (let i = 0; i < jordanDivs.length; i++) {
-                
-    }
-}

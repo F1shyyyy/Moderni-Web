@@ -1,355 +1,378 @@
 @font-face {
-    font-family: Nike_Bold;
-    src: url(../Font/nike-bold.ttf);
+	font-family: Nike_Bold;
+	src: url(../Font/nike-bold.ttf);
 }
 @font-face {
-    font-family: Nike;
-    src: url(../Font/nike-normal.ttf);
+	font-family: Nike;
+	src: url(../Font/nike-normal.ttf);
 }
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Nike;
-    scroll-behavior: smooth;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Nike;
+	scroll-behavior: smooth;
 }
-header{
+body{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	background-color: #211f1f;
+}
+header a {
+	text-decoration: none;
+}
+#header-h1 {
+	display: flex;
+}
+#header-h1 a {
+	display: flex;
+	margin-left: 2rem;
+}
+h1 {
+	color: white;
+	padding: 1rem 1rem 1rem 1rem;
+	font-size: 3rem;
+	font-family: Nike_Bold;
+}
+#nike-svg {
+	width: 5rem;
+	filter: invert(1);
+	-webkit-user-drag: none;
+	user-select: none;
+}
+#header-menu {
+	display: flex;
+	align-items: center;
+}
+#header-menu li {
+	list-style: none;
+}
+#header-ul {
+	display: flex;
+	align-items: center;
+	gap: 3.5rem;
+	padding-right: 3rem;
+	height: 100%;
+}
+.header-link {
+	font-size: 1.5rem;
+	color: white;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+#sneakers-a {
+	padding: 0 1rem;
+}
+#clothing-dropdown,
+#sneakers-dropdown {
+	height: 100%;
+	position: relative;
+}
+#clothing-button,
+#sneakers-button {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+.dropdown-list {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	gap: 0.1rem;
+	width: 100%;
+	z-index: 2;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+	background-color: #ffffff;
+}
+.dropdown-list a {
+	color: black;
+	font-size: 1.2rem;
+	padding: 0.5rem;
+}
+#sneakers-dropdown-list {
+	width: max-content;
+}
+.show-clothing #clothing-dropdown-list {
     display: flex;
-    justify-content: space-between;
-    background-color: #211f1f;
+    transform: translateY(0px);
+    scale: 100%;
 }
-header a{
-    text-decoration: none;
+.show-sneakers #sneakers-dropdown-list {
+	display: flex;
+    transform: translateY(0px);
+    scale: 100%;
 }
-#header-h1{
-    display: flex;
+#main-img {
+	width: 100%;
+	height: 75vh;
+	background-image: url(../img/swoosh.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
 }
-#header-h1 a{
-    display: flex;
-    margin-left: 2rem;
+#main-img h2 {
+	color: white;
+	font-size: 3rem;
+	margin-bottom: 3rem;
+	margin-left: 2rem;
 }
-h1{
-    color: white;
-    padding: 1rem 1rem 1rem 1rem;
-    font-size: 3rem;
-    font-family: Nike_Bold;
+#main-img a {
+	text-decoration: none;
+	color: white;
 }
-#nike-svg{
-    width: 5rem;
-    filter: invert(1);
-    -webkit-user-drag: none;
-    user-select: none;
+#main-img a:active {
+	color: antiquewhite;
 }
-#header-menu{
-    display: flex;
-    align-items: center;
+#main-img span {
+	font-size: 5rem;
+	overflow-y: hidden;
+	margin-bottom: 2.5rem;
 }
-#header-menu li{
-    list-style: none;
+#af1 {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 2rem;
 }
-#header-ul{
-    display: flex;
-    align-items: center;
-    gap: 3.5rem;
-    padding-right: 3rem;
-    height: 100%;
+#af1 h2 {
+	margin: 2rem;
+	padding: 1rem;
+	font-size: 2.5rem;
+	text-align: center;
+	width: 50%;
+	border-bottom: 2px solid black;
 }
-.header-link{
-    font-size: 1.5rem;
-    color: white;
-    background: none;
-    border: 0;
-    cursor: pointer;
+#af1-shoes {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 1rem;
+	width: 90%;
 }
-#sneakers-a{
-    padding: 0 1rem;
+.af1-shoe {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 1rem;
+	width: 18%;
 }
-#clothing-dropdown, #sneakers-dropdown{
-    height: 100%;
-    position: relative;
+.af1-shoe p {
+	font-size: 1.2rem;
+	margin-bottom: 5px;
 }
-#clothing-button, #sneakers-button{
-    display: flex;
-    align-items: center;
-    height: 100%;
+.af1-shoe img {
+	width: 100%;
+	z-index: -1;
 }
-.dropdown-list{
-    display: none;
-    position: absolute; 
-    flex-direction: column;
-    gap: 0.1rem;
-    width: 100%;
-    z-index: 3;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
-    background-color: #FFFFFF;
+.price {
+	font-weight: bold;
 }
-.dropdown-list a{
-    color: black;
-    font-size: 1.2rem;
-    padding: 0.5rem;
+#campaigns {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-#sneakers-dropdown-list{
-    width: max-content; 
+#campaigns h2 {
+	margin: 2rem;
+	padding: 1rem;
+	font-size: 2.5rem;
+	text-align: center;
+	width: 50%;
+	border-bottom: 2px solid black;
 }
-.show-clothing #clothing-dropdown-list{
-    display: flex;
-}
-.show-sneakers #sneakers-dropdown-list{
-    display: flex;
-}
-#main-img{
-    width: 100%;
-    height: 75vh;
-    background-image: url(../img/swoosh.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-}
-#main-img h2{
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 2rem;
-}
-#main-img a{
-    text-decoration: none;
-    color: white;
-}
-#main-img a:active{
-    color: antiquewhite;
-}
-#main-img span{
-    font-size: 5rem;
-    overflow-y: hidden;
-    margin-bottom: 2.5rem;
-}
-#af1{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 2rem;
-}
-#af1 h2{
-    margin: 2rem;
-    padding: 1rem;
-    font-size: 2.5rem;
-    text-align: center;
-    width: 50%;
-    border-bottom: 2px solid black;
-}
-#af1-shoes{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 90%;
-}
-.af1-shoe{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 1rem;
-    width: 18%;
-}
-.af1-shoe p{
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-.af1-shoe img{
-    width: 100%;
-    z-index: -1;
-}
-.price{
-    font-weight: bold;
-}
-#campaigns{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#campaigns h2{
-    margin: 2rem;
-    padding: 1rem;
-    font-size: 2.5rem;
-    text-align: center;
-    width: 50%;
-    border-bottom: 2px solid black;
-}
-#campaigns-wrapper{
-    display: flex;
-    justify-content: space-around;
-    margin: 1rem 1rem 3rem 1rem;
-    width: 90%;
+#campaigns-wrapper {
+	display: flex;
+	justify-content: space-around;
+	margin: 1rem 1rem 3rem 1rem;
+	width: 90%;
 }
 .campaign {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 30%;
-    border: 2px solid black;
-    border-radius: 1rem;
-    box-shadow: 0 0 15px #523f3f;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	width: 30%;
+	border: 2px solid black;
+	border-radius: 1rem;
+	box-shadow: 0 0 15px #523f3f;
 }
-.campaign img{
-    width: 30%;
-    border-radius: 50%;
+.campaign img {
+	width: 30%;
+	border-radius: 50%;
 }
-.campaign-text{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem;
+.campaign-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem;
 }
-.campaign-text h3{
-    font-size: 2rem;
-    margin: 1rem;
+.campaign-text h3 {
+	font-size: 2rem;
+	margin: 1rem;
 }
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #211f1f;
-    color: white;
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #211f1f;
+	color: white;
 }
-footer p{
-    font-size: 1.5rem;
-    margin: 1rem;
+footer p {
+	font-size: 1.5rem;
+	margin: 1rem;
 }
-#footer-links{
-    display: flex;   
-    justify-content: space-evenly;
-    width: 25%;
-    margin: 1rem;
+#footer-links {
+	display: flex;
+	justify-content: space-evenly;
+	width: 25%;
+	margin: 1rem;
 }
-#footer-links div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#footer-links div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-#footer-links i{
-    font-size: 3rem;
+#footer-links i {
+	font-size: 3rem;
 }
-#footer-links a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    margin: 0.5rem;
+#footer-links a {
+	text-decoration: none;
+	color: white;
+	font-size: 1.5rem;
+	margin: 0.5rem;
 }
-@media(min-width: 701px) {
-    #clothing-button:hover + #clothing-dropdown-list,
-    #sneakers-button:hover + #sneakers-dropdown-list,
-    #clothing-dropdown-list:hover,
-    #sneakers-dropdown-list:hover{
+@media (min-width: 701px) {
+	.dropdown-list {
         display: flex;
-    }
-    #clth-button::after, #snkrs-button::after{
-        position:absolute;
-        top:75%;
-        left:0%;
-        width:0;
-        height:2px;
-        background:#FFF;
-        display:block;
-        content:'';
-        transition: 0.5s ease-in-out;
-    }
-    #clth-button:hover::after, #snkrs-button:hover::after{
-        width:100%;
-    }
-    .dropdown-list li a:hover{
-        color: #523f3f;
-    }
-    .underline-clothing #clth-button::after{
-        width: 100%;
-    }
-    .underline-sneakers #snkrs-button::after{
-        width: 100%;
-    }
-    .af1-shoe:hover img{
-        scale: 120%;
-        transition: 0.5s ease-in-out;
-    }
-    .af1-shoe img{
-        transition: 0.5s ease-in-out;
-    }
-    .footer-social:hover i{
-        scale: 150%;
-        filter: drop-shadow(0px 0px 20px #ffffff95);
-        transition: 0.5s ease-in-out;
-    }
-    .footer-social i{
-        transition: 0.5s ease-in-out;
-    }
+		scale: 0%;
+        transform: translateY(-15px);
+        transition: transform 0.2s;
+	}
+	#clothing-button:hover + #clothing-dropdown-list,
+	#sneakers-button:hover + #sneakers-dropdown-list,
+	#clothing-dropdown-list:hover,
+	#sneakers-dropdown-list:hover {
+		scale: 100%;
+		transform: translateY(0rem);
+		transition: transform 0.2s;
+	}
+	#clth-button::after,
+	#snkrs-button::after {
+		position: absolute;
+		top: 75%;
+		left: 0%;
+		width: 0;
+		height: 2px;
+		background: #fff;
+		display: block;
+		content: "";
+		transition: 0.5s ease-in-out;
+	}
+	#clth-button:hover::after,
+	#snkrs-button:hover::after {
+		width: 100%;
+	}
+	.dropdown-list li a:hover {
+		color: #523f3f;
+	}
+	.underline-clothing #clth-button::after {
+		width: 100%;
+	}
+	.underline-sneakers #snkrs-button::after {
+		width: 100%;
+	}
+	.af1-shoe:hover img {
+		scale: 120%;
+		transition: 0.5s ease-in-out;
+	}
+	.af1-shoe img {
+		transition: 0.5s ease-in-out;
+	}
+	.footer-social:hover i {
+		scale: 150%;
+		filter: drop-shadow(0px 0px 20px #ffffff95);
+		transition: 0.5s ease-in-out;
+	}
+	.footer-social i {
+		transition: 0.5s ease-in-out;
+	}
 }
 @media (max-width: 900px) {
-    .af1-shoe{
-        width: 30%;
-    }
+	.af1-shoe {
+		width: 30%;
+	}
 }
 @media (max-width: 700px) {
-    header{
-        flex-direction: column;
-        align-items: center;
+	header {
+		flex-direction: column;
+		align-items: center;
+	}
+	#header-menu {
+		width: 100%;
+	}
+	#header-ul {
+		width: 100%;
+		flex-direction: column;
+		text-align: center;
+		padding-right: 0;
+		gap: 0;
+	}
+	#header-ul li {
+		width: 100%;
+	}
+	#header-ul li div {
+		text-align: center;
+	}
+	.header-link {
+		margin: 0.5rem 1rem;
+	}
+	#main-img {
+		background-size: cover;
+	}
+	#af1-shoes {
+		flex-direction: column;
+		align-items: center;
+	}
+	.af1-shoe {
+		width: 80%;
+		margin-bottom: 1rem;
+	}
+	.dropdown-list {
+		position: static;
+		width: 100%;
+	}
+    .dropdown-list li{
+        margin: 3.5px;
     }
-    #header-menu{
-        width: 100%;
-    }
-    #header-ul{
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-        padding-right: 0;
-        gap: 0;
-    }
-    #header-ul li{
-        width: 100%;
-    }
-    #header-ul li div{
-        text-align: center;
-    }
-    .header-link{
-        margin: 0.5rem 1rem;
-    }
-    #main-img{
-        background-size: cover;
-    }
-    #af1-shoes{
-        flex-direction: column;
-        align-items: center;
-    }
-    .af1-shoe{
-        width: 80%;
-        margin-bottom: 1rem;
-    }
-    .dropdown-list{
-        position: static;
-        width: 100%;
-    }
-    #sneakers-dropdown-list{
-        width: 100%;
-    }
-    #campaigns-wrapper{
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-    .campaign{
-        width: 90%;
-        align-items: center;
-    }
-    .campaign-text h3{
-        text-align: center;
-    }
-    #footer-links{
-        flex-direction: column;
-        gap: 1rem;
-    }
-    footer{
-        text-align: center;
-    }
+	#sneakers-dropdown-list {
+		width: 100%;
+	}
+	#campaigns-wrapper {
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+	.campaign {
+		width: 90%;
+		align-items: center;
+	}
+	.campaign-text h3 {
+		text-align: center;
+	}
+	#footer-links {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	footer {
+		text-align: center;
+	}
 }
